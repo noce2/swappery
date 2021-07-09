@@ -18,12 +18,17 @@ task("accounts", "Prints the list of accounts", async () => {
  */
 module.exports = {
   solidity: "0.8.4",
+  defaultNetwork: "hardhat",
   paths: {
     artifacts: "./src/artifacts",
   },
   networks: {
     hardhat: {
       chainId: 1337,
+    },
+    rinkeby: {
+      url: "https://rinkeby.infura.io/v3/348ebf4154d74ed789801efb524681bf",
+      accounts: [`0x${process.env["LLAVE_PRIVADA"]}`],
     },
   },
 };
